@@ -1,0 +1,1 @@
+Projekt stworzony na potrzeby nauki gita
