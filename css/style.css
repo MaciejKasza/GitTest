@@ -1,0 +1,214 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  font-family: roboto, sans-serif;
+  font-size: 10px;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+.navigation {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 10px;
+  background-color: black;
+}
+
+.navigation .logo {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+}
+
+.navigation .logo h4 {
+  font-size: 30px;
+  color: white;
+}
+
+.navigation .items {
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  right: 0%;
+  height: calc(100vh - 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: black;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.navigation .items.hide {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.navigation .items .item a, .navigation .items .item p {
+  padding: 0 5px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #a5a5a5;
+}
+
+.navigation .items .item p {
+  color: white;
+}
+
+.navigation .items .item.active a {
+  color: white;
+  -webkit-box-shadow: 0 4px 4px -2px gray;
+          box-shadow: 0 4px 4px -2px gray;
+}
+
+.navigation .items .container {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  background-color: red;
+}
+
+.navigation .burger {
+  position: relative;
+  width: 20px;
+  height: 15px;
+}
+
+.navigation .burger .line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #a5a5a5;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.navigation .burger .line.top {
+  top: 0;
+}
+
+.navigation .burger .line.middle {
+  top: calc(50% - 1px);
+}
+
+.navigation .burger .line.bottom {
+  top: calc(100% - 1px);
+}
+
+.navigation .burger.active .line {
+  background-color: white;
+}
+
+.navigation .burger.active .top {
+  -webkit-transform: translateY(calc(7.5px - 50%)) rotate(-45deg);
+          transform: translateY(calc(7.5px - 50%)) rotate(-45deg);
+}
+
+.navigation .burger.active .middle {
+  opacity: 0;
+}
+
+.navigation .burger.active .bottom {
+  -webkit-transform: translateY(calc(-7.5px + 50%)) rotate(45deg);
+          transform: translateY(calc(-7.5px + 50%)) rotate(45deg);
+}
+
+@media (min-width: 640px) {
+  .navigation .items {
+    left: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navigation {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .navigation .logo h4 {
+    font-size: 40px;
+  }
+  .navigation .items {
+    position: static;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .navigation .items.hide {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  .navigation .items .container {
+    display: none;
+  }
+  .navigation .items .item {
+    margin-right: 30px;
+  }
+  .navigation .items .item.active {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  .navigation .items a:hover {
+    color: white;
+  }
+  .navigation .burger {
+    display: none;
+  }
+}
+
+@media (min-width: 1400px) {
+  .navigation .logo h4 {
+    font-size: 50px;
+  }
+  .navigation .items .item a {
+    font-size: 20px;
+  }
+}
+
+/* Animations */
+@-webkit-keyframes navItemsFade {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes navItemsFade {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+/*# sourceMappingURL=style.css.map */
